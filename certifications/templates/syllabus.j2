@@ -1,0 +1,30 @@
+        <section id="syllabus">
+            <div class="row">
+                <h1> #סילבוס_הקורס</h1>
+                <div id="weeks">
+                    {% for week in syllabus %}
+                    <div class="week">
+                        <div class="week-title flex-row">
+                            <ion-icon name="caret-back-outline"></ion-icon>
+                            <p><b>שבוע {{ loop.index }}</b></p>
+                            <div>
+                                {%- for icon in week.icons[::-1] -%}
+                                    <ion-icon name="{{ icon }}"></ion-icon>
+                                {% endfor -%}
+                            </div>
+                        </div>
+                        <div class="week-info sub-cat-closed">
+                            <p>
+                            {{ week.description }}
+                            </p>
+                            <ul class="sub-cat">
+                                {%- for subject in week.topics -%}
+                                    <li>{{ subject }}</li>
+                                {%- endfor %}
+                            </ul>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </section>

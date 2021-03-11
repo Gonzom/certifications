@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+
+<head>
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@200;300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <link href="{{ url_for("static", filename="/css/style.css") }}" rel="stylesheet" type="text/css">
+
+    <title>לומדים פייתון - מיזם ללימוד פייתון בחינם</title>
+</head>
+
+<body>
+    {% include "nav.j2" %}
+    {% include "header.j2"  %}
+    <main>
+        {% include "about.j2" %}
+        {% include "certificate.j2" %}
+        {% include "techs.j2" %}
+        {% include "syllabus.j2" %}
+    </main>
+    {% include "footer.j2" %}
+
+    <!-- Scripts -->
+    <script src="{{ url_for("static", filename="js/scripts.js") }}"></script>
+    <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
+</body>
+
+</html>
