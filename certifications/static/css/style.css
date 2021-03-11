@@ -1,0 +1,362 @@
+:root {
+    --row-width: 71.25rem; /* 1140 px */
+    --white-space: 13vh;
+
+    /* Text */
+    --text-xs: 0.75rem; /* 12 px */
+    --text-s: 1rem; /* 16 px */
+    --text-m: 1.25rem; /* 20 px */
+    --text-l: 1.5rem;  /* 24 px */
+    --text-xl: 2.5rem;  /* 40 px */
+    --text-xxl: 3.5rem;  /* 56 px */
+
+    /* Paddings */
+    --padding-xs: 0.5rem; /* 8 px */
+    --padding-s: 1rem; /* 16 px */
+    --padding-m: 1.5rem;  /* 24 px */
+    --padding-l: 2rem;  /* 32 px */
+    --padding-xl: 3rem;  /* 48 px */
+
+    /* Colors */
+    --primary: #fbc44a;
+    --secondary: #1C75BC;
+    --negative: #f24726;
+    --background: white;
+    --surface: #F9F9FA;
+    --surface-variant: #A7A9AC;
+    --text-primary: #282828;
+}
+
+* {
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html {
+    font-size: 100%;
+    background-color: var(--background);
+    color: var(--text-primary);
+    font-family: 'Assistant','Ariel', sans-serif;
+    font-weight: 400;
+    text-rendering: optimizeLegibility;
+    scroll-behavior: smooth;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style-type: none;
+}
+
+header {
+    height: 90vh;
+    background-size: cover;
+    background-position: top;
+    background-image:
+        linear-gradient(
+            to right bottom,
+            rgba(249, 249, 250, 0.8),
+            rgba(255, 255, 255, 0.8)
+            ),
+        url(../img/back_balck.png);
+}
+
+#header-flex {
+    height: 100%;
+}
+
+#header-flex div {
+    margin: var(--padding-s);
+}
+
+.row {
+    max-width: var(--row-width);
+    margin: 0 auto 0 auto;
+    padding: 0 var(--padding-m);
+}
+
+.flex-row,
+.flex-col {
+    display: flex;
+}
+
+.flex-row {
+    flex-flow: row wrap;
+    align-items: center;
+}
+
+.flex-row div {
+    flex: 1;
+}
+
+.flex-col {
+    flex-direction: column;
+    margin: auto;
+}
+
+nav {
+    z-index: 3;
+    position: sticky;
+    top: 0;
+    background-color: var(--background);
+    padding: var(--padding-xs) 0;
+}
+
+#hamburger-bar {
+    display: none;
+    font-size: var(--text-l);
+    text-align: left;
+    cursor: pointer;
+}
+
+#navigation {
+    vertical-align: middle;
+    margin-right: auto;
+}
+
+#navigation li {
+    float: right;
+}
+
+/* Sections */
+
+main {
+    display: flex;
+    flex-flow: column;
+}
+
+section {
+    flex: 1;
+    min-height: 50vh;
+    max-height: auto;
+    padding: var(--white-space) 0;
+}
+
+section:nth-child(2n + 1) {
+    background-color: var(--surface);
+}
+
+footer {
+    background-color: var(--text-primary);
+    color: var(--surface);
+    padding: var(--padding-m);
+}
+
+footer div div{
+    flex: 1;
+    height: 100%;
+    align-self: flex-start;
+}
+
+/* Images */
+
+#logo {
+    width: 10rem;
+}
+
+#techs ul {
+    height: 100%;
+    align-items: center;
+    margin-top: var(--padding-l);
+    justify-content: space-between;
+}
+
+#techs li{
+    flex: 1;
+    text-align: center;
+    font-size: 3rem;
+    padding: var(--padding-m);
+}
+
+#techs li:first-child,
+#techs ion-icon:hover {
+    color:var(--primary);
+}
+
+/* Titles */
+
+h2 {
+    font-size: var(--text-xl);
+    font-weight: 600;
+}
+
+#intro-quot {
+    font-size: var(--text-xl);
+    font-weight: 600;
+    text-align: left;
+    direction: ltr;
+    font-family: 'Dancing Script', cursive;
+}
+
+#intro-quot p:last-child {
+    font-weight: 400;
+    font-size: 50%;
+    font-family: 'Assistant', 'Ariel', sans-serif;
+}
+
+.nav-title {
+    font-weight: 600;
+    font-size: var(--text-m);
+    color: var(--text-primary);
+    text-transform:capitalize;
+    margin: 0 var(--padding-m);
+    transition: all 0.2s;
+}
+
+.nav-title:hover{
+    box-shadow: 0 0.2rem var(--primary);
+}
+
+#title-xxl {
+    font-size: var(--text-xxl);
+    font-weight: 700;
+}
+
+.credit {
+    font-size: var(--text-xs);
+}
+
+/* Paragraphs */
+.para-m {
+    font-size: var(--text-m);
+    margin: var(--padding-m) 0;
+    line-height: 1.5rem;
+}
+
+.para-s {
+    font-size: var(--text-s);
+    margin: var(--padding-s) 0;
+    line-height: 1.25rem;
+}
+
+.para-l {
+    font-size: var(--text-l);
+    margin: var(--padding-l) 0;
+    line-height: 2rem;
+}
+
+/* Buttons */
+.button {
+    width: 8rem;
+    font-weight: 600;
+    text-align: center;
+    font-size: var(--text-l);
+    color: var(--surface);
+    background-color: var(--secondary);
+    border-radius: 0.25rem;
+    transition: all 0.1s;
+    padding-bottom: 0.25rem;
+}
+
+.button:hover,
+.button:focus,
+.button:active {
+    background-color: var(--primary);
+    color: var(--secondary);
+}
+
+/* Lists */
+
+.week {
+    transition: all 0.2s;
+}
+
+.week p {
+    font-size: var(--text-m);
+    padding: var(--padding-xs);
+}
+
+.week ion-icon {
+    font-size: var(--text-s);
+}
+
+.week {
+    cursor:pointer;
+    border-radius: 0.25rem;
+    background-color: var(--surface);
+    margin: var(--padding-xs) 0;
+    padding: 0 var(--padding-s);
+}
+
+.week-title div{
+    text-align: left;
+}
+
+.week:hover {
+    box-shadow:inset 0px 0px 0px 0.1rem var(--primary);
+}
+
+.sub-cat {
+    display: block;
+    direction: rtl;
+    list-style-type: disc;
+    list-style-position: inside;
+    padding: 0 var(--padding-m) var(--padding-s) 0;
+    font-size: var(--text-s);
+}
+
+.sub-cat-closed {
+    display: none;
+}
+
+.navigation-open {
+    display: block;
+}
+
+@media screen and (max-width: 50rem) {
+    #logo {
+        width: 7rem;
+    }
+
+    #intro {
+        flex-basis:100%;
+        align-items: center;
+        text-align: center;
+    }
+
+    #intro-quot {
+        align-self: flex-start;
+        font-size: var(--text-l);
+    }
+
+    #techs li {
+        flex-basis: 50%;
+        flex-flow: column wrap;
+    }
+
+}
+
+@media screen and (max-width: 30rem) {
+    header {
+        height: 94vh;
+    }
+
+    #hamburger-bar {
+        display: block;
+    }
+
+    #navigation {
+        margin: auto;
+    }
+
+    .nav-title {
+        font-size: var(--text-s);
+        margin: 0 var(--padding-s);
+    }
+
+    .navigation-open {
+        display: none;
+    }
+
+    .row {
+        padding: 0 var(--padding-s);
+    }
+
+    nav div {
+        flex-basis: 50%;
+    }
+}
