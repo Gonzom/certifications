@@ -131,3 +131,4 @@ dmypy.json
 # Students' details
 students.db
 students.json
+certifications/static/certifications/*.png
