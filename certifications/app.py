@@ -1,10 +1,12 @@
-from flask import Flask, render_template
+from flask import Flask, abort, render_template
 
 from certifications import db
+from certifications.config import STATIC_PATH
+from certifications.generator import get_certification_url
 from certifications.utils import get_syllabus
 
 
-app = Flask(__name__)
+app = Flask(__name__, static_folder=str(STATIC_PATH))
 database = db.get()
 
 
@@ -21,4 +23,12 @@ def _db_close(exc):
 
 @app.route("/<student_id>")
 def main(student_id):
-    return render_template('user.j2', syllabus=get_syllabus())
+    user = db.User.get_or_none(url=student_id)
+    if not user:
+        return abort(404, "Can't find this user")
+    return render_template(
+        'user.j2',
+        user=user,
+        certification=get_certification_url(user),
+        syllabus=get_syllabus()
+    )
