@@ -5,6 +5,7 @@ from typing import List
 from peewee import BooleanField, CharField, Model, ModelBase, SqliteDatabase
 
 from certifications.config import DB_PATH, JSON_PATH
+from certifications.utils import get_random_id
 
 
 database = SqliteDatabase(str(DB_PATH))
@@ -27,16 +28,17 @@ class User(BaseModel):
     fullname = CharField()
     mail = CharField(unique=True)
     github = CharField(unique=True)
-    honors = BooleanField(unique=True)
+    url = CharField(unique=True)
+    honors = BooleanField(default=False)
 
     @classmethod
     def load_from_json(cls, path: Path) -> None:
         if not path.is_file():
             raise ValueError("Can't find the student's JSON file.")
         users = json.loads(path.read_text())
-        with database.atomic():
-            for user in users:
-                cls.insert(**user).on_conflict_ignore()
+        for user in users:
+            user['url'] = get_random_id()
+        cls.insert_many(users).on_conflict_ignore().execute()
 
 
 def bootstrap(models: List[ModelBase], students_json: Path) -> None:
