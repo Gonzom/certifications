@@ -10,7 +10,7 @@ randomizer = secrets.SystemRandom()
 
 
 def get_syllabus() -> List[Dict[str, Union[str, Dict[str, str]]]]:
-    return json.loads(SYLLABUS_PATH.read_text())
+    return json.loads(SYLLABUS_PATH.read_text(encoding='utf-8'))
 
 
 def get_random_id(size: int = 8) -> str:

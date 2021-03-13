@@ -9,6 +9,7 @@ from certifications.config import (
     STATIC_PATH,
 )
 
+
 def get_qr_generator():
     return qrcode.QRCode(
         version=1,

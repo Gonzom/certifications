@@ -69,10 +69,6 @@ header {
     height: 100%;
 }
 
-#header-flex div {
-    margin: var(--padding-s);
-}
-
 .row {
     max-width: var(--row-width);
     margin: 0 auto 0 auto;
@@ -136,7 +132,7 @@ section {
     padding: var(--white-space) 0;
 }
 
-section:nth-child(2n + 1) {
+section:nth-child(2n) {
     background-color: var(--surface);
 }
 
@@ -189,23 +185,20 @@ footer div div{
 
 /* Titles */
 
+h3 {
+    font-size: var(--text-xl);
+    font-weight: 600;
+}
+
 h2 {
-    font-size: var(--text-xl);
-    font-weight: 600;
+    padding: var(--padding-s) 0;
 }
 
-#intro-quot {
-    font-size: var(--text-xl);
-    font-weight: 600;
-    text-align: left;
-    direction: ltr;
-    font-family: 'Dancing Script', cursive;
-}
-
-#intro-quot p:last-child {
-    font-weight: 400;
-    font-size: 50%;
-    font-family: 'Assistant', 'Ariel', sans-serif;
+#intro {
+    width: 50%;
+    height: 100%;
+    margin-right: 0;
+    justify-content: center;
 }
 
 .nav-title {
@@ -221,7 +214,7 @@ h2 {
     box-shadow: 0 0.2rem var(--primary);
 }
 
-#title-xxl {
+.title-xxl {
     font-size: var(--text-xxl);
     font-weight: 700;
 }
@@ -276,7 +269,6 @@ h2 {
 }
 
 .week p {
-    font-size: var(--text-m);
     padding: var(--padding-xs);
 }
 
@@ -323,26 +315,25 @@ h2 {
     }
 
     #intro {
-        flex-basis:100%;
+        width: 100%;
         align-items: center;
         text-align: center;
-    }
-
-    #intro-quot {
-        align-self: flex-start;
-        font-size: var(--text-l);
     }
 
     #techs li {
         flex-basis: 50%;
         flex-flow: column wrap;
     }
-
 }
 
 @media screen and (max-width: 30rem) {
     header {
         height: 94vh;
+    }
+
+    .para-m,
+    .nav-title {
+        font-size: var(--text-s);
     }
 
     #hamburger-bar {
@@ -353,8 +344,8 @@ h2 {
         margin: auto;
     }
 
-    .nav-title {
-        font-size: var(--text-s);
+    .nav-title
+     {
         margin: 0 var(--padding-s);
     }
 
