@@ -25,7 +25,7 @@ def load_image(image: Union[str, Path], scale: Union[int, float]):
     return avatar.resize((width, height))
 
 
-def get_certificate_path(user_url):
+def get_users_certificate_path(user_url: str) -> Path:
     return (CERTS_FOLDER / user_url).with_suffix('.png')
 
 
@@ -54,11 +54,15 @@ def create_certificate(name: str, user_url: str) -> None:
     draw.text(((1200 - 250) // 2, 585), name, (0, 0, 0), font=font)
     qr = get_user_qr(user_url)
     img.paste(qr, (374, 740))
-    img.save(get_certificate_path(user_url))
+    img.save(get_users_certificate_path(user_url))
 
 
-def get_certification_url(user: 'User') -> str:
-    certification_path = get_certificate_path(user.url)
+def get_certification_path(user: 'User') -> Path:
+    certification_path = get_users_certificate_path(user.url)
     if not certification_path.exists():
         create_certificate(user.fullname, user.url)
     return certification_path.relative_to(STATIC_PATH)
+
+
+def get_certification_url(user: 'User') -> str:
+    return str(get_certification_path(user)).replace('\\', '/')
