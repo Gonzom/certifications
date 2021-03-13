@@ -2,7 +2,9 @@ import json
 from pathlib import Path
 from typing import List
 
-from peewee import BooleanField, CharField, Model, ModelBase, SqliteDatabase
+from peewee import (
+    BooleanField, CharField, DateField, Model, ModelBase, SqliteDatabase,
+)
 
 from certifications.config import DB_PATH, JSON_PATH
 from certifications.utils import get_random_id
@@ -27,8 +29,9 @@ class User(BaseModel):
     username = CharField(unique=True)
     fullname = CharField()
     mail = CharField(unique=True)
-    github = CharField(unique=True)
-    url = CharField(unique=True)
+    github = CharField(unique=True, null=True)
+    url = CharField(unique=True, index=True)
+    issue_date = DateField()
     honors = BooleanField(default=False)
 
     @classmethod
