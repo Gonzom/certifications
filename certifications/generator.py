@@ -1,5 +1,5 @@
 from pathlib import Path
-from typing import Union
+from typing import Tuple, Union
 
 from PIL import Image, ImageDraw, ImageFont
 import qrcode
@@ -8,6 +8,13 @@ from certifications.config import (
     COURSE_AVATAR, CERT_FONT, CERT_IMAGE, CERTS_FOLDER, DOMAIN,
     STATIC_PATH,
 )
+
+
+NAME_LINE_WIDTH = 935
+NAME_LINE_START = 265
+NAME_LINE_HEIGHT = 585
+NAME_FONT_SIZE = 72
+QR_POSITION = (374, 740)
 
 
 def get_qr_generator():
@@ -46,13 +53,19 @@ def get_user_qr(user_url: str) -> str:
     return qr_img.resize((width, height))
 
 
+def draw_name_on_certificate(painter, name: str) -> None:
+    font = ImageFont.truetype(str(CERT_FONT), NAME_FONT_SIZE)
+    text_w, _ = painter.textsize(name, font=font)
+    name_x_column = (NAME_LINE_WIDTH - text_w) // 2 + NAME_LINE_START
+    position_of_name = (name_x_column, NAME_LINE_HEIGHT)
+    painter.text(position_of_name, name, (0, 0, 0), font=font)
+
+
 def create_certificate(name: str, user_url: str) -> None:
     img = Image.open(CERT_IMAGE)
     draw = ImageDraw.Draw(img)
-    font_size = 72
-    font = ImageFont.truetype(str(CERT_FONT), font_size)
-    draw.text(((1200 - 250) // 2, 585), name, (0, 0, 0), font=font)
     qr = get_user_qr(user_url)
+    draw_name_on_certificate(painter=draw, name='ל' + name)
     img.paste(qr, (374, 740))
     img.save(get_users_certificate_path(user_url))
 
