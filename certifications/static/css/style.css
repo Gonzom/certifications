@@ -248,6 +248,10 @@ a:hover,
     box-shadow: 0 0.15rem var(--primary);
 }
 
+#logo-link {
+    box-shadow:none;
+}
+
 #header-title {
     font-size: var(--text-xxl);
     font-weight: 700;
