@@ -1,5 +1,6 @@
+from datetime import datetime
 from pathlib import Path
-from typing import Tuple, Union
+from typing import Union
 
 from PIL import Image, ImageDraw, ImageFont
 import qrcode
@@ -13,8 +14,11 @@ from certifications.config import (
 NAME_LINE_WIDTH = 935
 NAME_LINE_START = 265
 NAME_LINE_HEIGHT = 585
-NAME_FONT_SIZE = 72
 QR_POSITION = (374, 740)
+DATE_POSITION = (100, 80)
+
+NAME_FONT_SIZE = 72
+DATE_FONT_SIZE = 32
 
 
 def get_qr_generator():
@@ -22,7 +26,7 @@ def get_qr_generator():
         version=1,
         error_correction=qrcode.constants.ERROR_CORRECT_H,
         box_size=8,
-        border=2
+        border=2,
     )
 
 
@@ -61,19 +65,26 @@ def draw_name_on_certificate(painter, name: str) -> None:
     painter.text(position_of_name, name, (0, 0, 0), font=font)
 
 
-def create_certificate(name: str, user_url: str) -> None:
+def draw_date_on_certificate(painter, date: int) -> None:
+    font = ImageFont.truetype(str(CERT_FONT), DATE_FONT_SIZE)
+    text = datetime.fromtimestamp(date).strftime('%Y/%m/%d')
+    painter.text(DATE_POSITION, text, (0, 0, 0), font=font)
+
+
+def create_certificate(name: str, date: int, user_url: str) -> None:
     img = Image.open(CERT_IMAGE)
     draw = ImageDraw.Draw(img)
     qr = get_user_qr(user_url)
     draw_name_on_certificate(painter=draw, name='ל' + name)
-    img.paste(qr, (374, 740))
+    draw_date_on_certificate(painter=draw, date=date)
+    img.paste(qr, QR_POSITION)
     img.save(get_users_certificate_path(user_url))
 
 
 def get_certification_path(user: 'User') -> Path:
     certification_path = get_users_certificate_path(user.url)
     if not certification_path.exists():
-        create_certificate(user.fullname, user.url)
+        create_certificate(user.fullname, user.issue_date, user.url)
     return certification_path.relative_to(STATIC_PATH)
 
 
