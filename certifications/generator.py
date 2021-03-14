@@ -6,7 +6,11 @@ from PIL import Image, ImageDraw, ImageFont
 import qrcode
 
 from certifications.config import (
-    COURSE_AVATAR, CERT_FONT, CERT_IMAGE, CERTS_FOLDER, DOMAIN,
+    COURSE_AVATAR,
+    CERT_FONT,
+    CERT_IMAGE,
+    CERTS_FOLDER,
+    DOMAIN,
     STATIC_PATH,
 )
 
@@ -37,7 +41,7 @@ def load_image(image: Union[str, Path], scale: Union[int, float]):
 
 
 def get_users_certificate_path(user_url: str) -> Path:
-    return (CERTS_FOLDER / user_url).with_suffix('.png')
+    return (CERTS_FOLDER / user_url).with_suffix(".png")
 
 
 def get_user_qr(user_url: str) -> str:
@@ -46,7 +50,7 @@ def get_user_qr(user_url: str) -> str:
     qr = get_qr_generator()
     qr.add_data(f"https://{DOMAIN}/{user_url}")
     qr.make()
-    qr_img = qr.make_image(fill_color='gray').convert('RGB')
+    qr_img = qr.make_image(fill_color="gray").convert("RGB")
 
     pos = (
         (qr_img.size[0] - avatar.size[0]) // 2,
@@ -67,7 +71,7 @@ def draw_name_on_certificate(painter, name: str) -> None:
 
 def draw_date_on_certificate(painter, date: int) -> None:
     font = ImageFont.truetype(str(CERT_FONT), DATE_FONT_SIZE)
-    text = datetime.fromtimestamp(date).strftime('%Y/%m/%d')
+    text = datetime.fromtimestamp(date).strftime("%Y/%m/%d")
     painter.text(DATE_POSITION, text, (0, 0, 0), font=font)
 
 
@@ -75,18 +79,18 @@ def create_certificate(name: str, date: int, user_url: str) -> None:
     img = Image.open(CERT_IMAGE)
     draw = ImageDraw.Draw(img)
     qr = get_user_qr(user_url)
-    draw_name_on_certificate(painter=draw, name='ל' + name)
+    draw_name_on_certificate(painter=draw, name="ל" + name)
     draw_date_on_certificate(painter=draw, date=date)
     img.paste(qr, QR_POSITION)
     img.save(get_users_certificate_path(user_url))
 
 
-def get_certification_path(user: 'User') -> Path:
+def get_certification_path(user: "User") -> Path:
     certification_path = get_users_certificate_path(user.url)
     if not certification_path.exists():
         create_certificate(user.fullname, user.issue_date, user.url)
     return certification_path.relative_to(STATIC_PATH)
 
 
-def get_certification_url(user: 'User') -> str:
-    return str(get_certification_path(user)).replace('\\', '/')
+def get_certification_url(user: "User") -> str:
+    return str(get_certification_path(user)).replace("\\", "/")

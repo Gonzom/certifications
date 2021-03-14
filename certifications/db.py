@@ -3,7 +3,12 @@ from pathlib import Path
 from typing import List
 
 from peewee import (
-    BooleanField, CharField, DateField, Model, ModelBase, SqliteDatabase,
+    BooleanField,
+    CharField,
+    DateField,
+    Model,
+    ModelBase,
+    SqliteDatabase,
 )
 
 from certifications.config import DB_PATH, JSON_PATH
@@ -21,7 +26,7 @@ class BaseModel(Model):
     class Meta:
         database = database
 
-    def refresh(self) -> 'BaseModel':
+    def refresh(self) -> "BaseModel":
         return type(self).get(self._pk_expr())
 
 
@@ -40,7 +45,7 @@ class User(BaseModel):
             raise ValueError("Can't find the student's JSON file.")
         users = json.loads(path.read_text())
         for user in users:
-            user['url'] = get_random_id()
+            user["url"] = get_random_id()
         cls.insert_many(users).on_conflict_ignore().execute()
 
 

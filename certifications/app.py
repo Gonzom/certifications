@@ -27,8 +27,8 @@ def main(student_id):
     if not user:
         return abort(404, "Can't find this user")
     return render_template(
-        'user.j2',
+        "user.j2",
         user=user,
         certification=get_certification_url(user),
-        syllabus=get_syllabus()
+        syllabus=get_syllabus(),
     )
