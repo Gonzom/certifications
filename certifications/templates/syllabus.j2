@@ -5,7 +5,7 @@
                     {% for week in syllabus %}
                     <div class="week">
                         <div class="week-title flex-row">
-                            <ion-icon name="caret-back-outline"></ion-icon>
+                            <ion-icon name="caret-back-outline" class="arrow"></ion-icon>
                             <p><b>פרק {{ loop.index }}</b></p>
                             <div>
                                 {%- for icon in week.icons[::-1] -%}
