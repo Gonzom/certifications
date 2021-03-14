@@ -1,12 +1,12 @@
         <section id="syllabus">
             <div class="row">
-                <h2> #סילבוס_הקורס</h2>
+                <h3 class="l-title"> #סילבוס_הקורס</h3>
                 <div id="weeks">
                     {% for week in syllabus %}
                     <div class="week">
                         <div class="week-title flex-row">
                             <ion-icon name="caret-back-outline"></ion-icon>
-                            <p><b>שבוע {{ loop.index }}</b></p>
+                            <p><b>פרק {{ loop.index }}</b></p>
                             <div>
                                 {%- for icon in week.icons[::-1] -%}
                                     <ion-icon name="{{ icon }}"></ion-icon>
@@ -15,13 +15,19 @@
                         </div>
                         <div class="week-info sub-cat-closed">
                             <p class="para-m">
-                            {{ week.description }}
+                                {{ week.description }}
                             </p>
+                            <span class="para-s"><b>רשימת נושאים:</b></span>
                             <ul class="sub-cat">
                                 {%- for subject in week.topics -%}
                                     <li>{{ subject }}</li>
                                 {%- endfor %}
                             </ul>
+                            <div class="week-link">
+                                <a href="" target="_blank">
+                                    קישור למחברת מבוא
+                                </a>
+                            </div>
                         </div>
                     </div>
                     {% endfor %}

@@ -1,10 +1,13 @@
-function setClickByClass(clickTarget, elementTarget, classTaggle) {
-    const clickElements = document.getElementsByClassName(clickTarget);
+function setWeekOpenClick() {
+    const clickElements = document.getElementsByClassName('week');
     for (let i = 0; i < clickElements.length; i++) {
         const element = clickElements[i];
         element.addEventListener('click', function () {
-            const target = element.getElementsByClassName(elementTarget)[0];
-            target.classList.toggle(classTaggle);
+            const target = element.getElementsByClassName('week-info')[0];
+            target.classList.toggle('sub-cat-closed');
+            const arrow = element.getElementsByTagName("ion-icon")[0];
+            console.log(arrow);
+            arrow.classList.toggle('arrow-open');
         });
     }
 }
@@ -19,7 +22,7 @@ function setClickById(clickTarget, elementTarget, classTaggle) {
 
 document.addEventListener(
     'DOMContentLoaded', function () {
-        setClickByClass('week', 'week-info', 'sub-cat-closed');
+        setWeekOpenClick();
         setClickById('hamburger-bar', 'navigation', 'navigation-open');
     }
 )

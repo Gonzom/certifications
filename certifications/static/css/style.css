@@ -65,6 +65,11 @@ header {
         url(../img/back_balck.png);
 }
 
+header li {
+    margin: var(--padding-s) 0;
+    font-size: var(--text-m);
+}
+
 #header-flex {
     height: 100%;
 }
@@ -162,40 +167,58 @@ footer div div{
 #students .certificate img {
     max-width: 60%;
     height: auto;
+    Object-fit: contain;
+    margin: var(--padding-m) 0;
 }
 
 #techs ul {
     height: 100%;
     align-items: center;
-    margin-top: var(--padding-l);
+    margin: var(--padding-l) 0;
     justify-content: space-between;
 }
 
+#techs img {
+    width: 3rem;
+}
+
 #techs li {
-    flex: 1;
     text-align: center;
     font-size: 3rem;
     padding: var(--padding-m);
 }
 
-#techs li:first-child,
-#techs ion-icon:hover {
+#techs li,
+#techs img {
+    flex: 1;
+}
+
+#techs ion-icon:hover,
+#techs ion-icon:hover + h2,
+#techs img + h2 {
     color:var(--primary);
+}
+
+.arrow-open {
+    transform: rotate(-90deg);
+    color: var(--secondary);
+    transition: transform 0.2s linear;
 }
 
 /* Titles */
 
-h3 {
+h2.xl-title{
     font-size: var(--text-xl);
     font-weight: 600;
 }
 
-h2 {
+h3.l-title {
+    font-size: var(--text-l);
     padding: var(--padding-s) 0;
 }
 
 #intro {
-    width: 50%;
+    width: 60%;
     height: 100%;
     margin-right: 0;
     justify-content: center;
@@ -214,7 +237,7 @@ h2 {
     box-shadow: 0 0.2rem var(--primary);
 }
 
-.title-xxl {
+#header-title {
     font-size: var(--text-xxl);
     font-weight: 700;
 }
@@ -224,15 +247,15 @@ h2 {
 }
 
 /* Paragraphs */
+
 .para-m {
     font-size: var(--text-m);
-    margin: var(--padding-m) 0;
     line-height: 1.5rem;
 }
 
 .para-s {
     font-size: var(--text-s);
-    margin: var(--padding-s) 0;
+    margin: var(--padding-m) var(--padding-xs);
     line-height: 1.25rem;
 }
 
@@ -243,6 +266,7 @@ h2 {
 }
 
 /* Buttons */
+
 .button {
     width: 8rem;
     font-weight: 600;
@@ -253,6 +277,7 @@ h2 {
     border-radius: 0.25rem;
     transition: all 0.1s;
     padding-bottom: 0.25rem;
+    margin: var(--padding-s) 0;
 }
 
 .button:hover,
@@ -263,10 +288,6 @@ h2 {
 }
 
 /* Lists */
-
-.week {
-    transition: all 0.2s;
-}
 
 .week p {
     padding: var(--padding-xs);
@@ -282,6 +303,15 @@ h2 {
     background-color: var(--surface);
     margin: var(--padding-xs) 0;
     padding: 0 var(--padding-s);
+    transition: all 0.2s;
+}
+
+.week-link {
+    text-align: left;
+    padding-left: var(--padding-m);
+    padding-bottom: var(--padding-s);
+    font-weight: 600;
+    color: var(--secondary);
 }
 
 .week-title div{
@@ -326,13 +356,18 @@ h2 {
     }
 }
 
-@media screen and (max-width: 30rem) {
+@media screen and (max-width: 30rem), screen and (max-height: 30rem) {
     header {
         height: 94vh;
     }
 
+    #header-title {
+        font-size: var(--text-xl);
+    }
+
     .para-m,
-    .nav-title {
+    .nav-title,
+    header li {
         font-size: var(--text-s);
     }
 
@@ -344,8 +379,7 @@ h2 {
         margin: auto;
     }
 
-    .nav-title
-     {
+    .nav-title {
         margin: 0 var(--padding-s);
     }
 
@@ -359,5 +393,26 @@ h2 {
 
     nav div {
         flex-basis: 50%;
+    }
+
+    footer {
+        font-size: var(--text-xs);
+    }
+}
+
+@media screen and (max-height: 30rem) {
+    header {
+        height: 100%;
+    }
+
+    .button {
+        width: 6rem;
+        font-size: var(--text-m);
+    }
+}
+
+@media not all and (orientation: landscape) {
+    #students .certificate img {
+        max-width: 80%;
     }
 }
