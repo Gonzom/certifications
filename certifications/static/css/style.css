@@ -6,16 +6,16 @@
     --text-xs: 0.75rem; /* 12 px */
     --text-s: 1rem; /* 16 px */
     --text-m: 1.25rem; /* 20 px */
-    --text-l: 1.5rem;  /* 24 px */
-    --text-xl: 2.5rem;  /* 40 px */
-    --text-xxl: 3.5rem;  /* 56 px */
+    --text-l: 1.5rem; /* 24 px */
+    --text-xl: 2.5rem; /* 40 px */
+    --text-xxl: 3.5rem; /* 56 px */
 
     /* Paddings */
     --padding-xs: 0.5rem; /* 8 px */
     --padding-s: 1rem; /* 16 px */
-    --padding-m: 1.5rem;  /* 24 px */
-    --padding-l: 2rem;  /* 32 px */
-    --padding-xl: 3rem;  /* 48 px */
+    --padding-m: 1.5rem; /* 24 px */
+    --padding-l: 2rem; /* 32 px */
+    --padding-xl: 3rem; /* 48 px */
 
     /* Colors */
     --primary: #fbc44a;
@@ -28,16 +28,16 @@
 }
 
 * {
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 html {
     font-size: 100%;
     background-color: var(--background);
     color: var(--text-primary);
-    font-family: 'Assistant','Ariel', sans-serif;
+    font-family: 'Assistant', 'Ariel', sans-serif;
     font-weight: 400;
     text-rendering: optimizeLegibility;
     scroll-behavior: smooth;
@@ -57,13 +57,12 @@ header {
     height: 90vh;
     background-size: cover;
     background-position: top;
-    background-image:
-        linear-gradient(
+    background-image: linear-gradient(
             to right bottom,
             rgba(249, 249, 250, 0.8),
             rgba(255, 255, 255, 0.8)
-            ),
-        url(../img/back_balck.png);
+    ),
+    url(../img/back_balck.png);
 }
 
 header li {
@@ -148,7 +147,7 @@ footer {
     padding: var(--padding-m);
 }
 
-footer div div{
+footer div div {
     flex: 1;
     height: 100%;
     align-self: flex-start;
@@ -201,7 +200,7 @@ footer div div{
 #techs ion-icon:hover,
 #techs ion-icon:hover + h2,
 #techs img + h2 {
-    color:var(--primary);
+    color: var(--primary);
 }
 
 .arrow,
@@ -217,7 +216,7 @@ footer div div{
 
 /* Titles */
 
-h2.xl-title{
+h2.xl-title {
     font-size: var(--text-xl);
     font-weight: 600;
 }
@@ -238,7 +237,7 @@ h3.l-title {
     font-weight: 600;
     font-size: var(--text-m);
     color: var(--text-primary);
-    text-transform:capitalize;
+    text-transform: capitalize;
     margin: 0 var(--padding-m);
     transition: all 0.2s;
 }
@@ -249,7 +248,7 @@ a:hover,
 }
 
 #logo-link {
-    box-shadow:none;
+    box-shadow: none;
 }
 
 #header-title {
@@ -314,7 +313,7 @@ a:hover,
 
 .week {
     z-index: 1;
-    cursor:pointer;
+    cursor: pointer;
     border-radius: 0.25rem;
     background-color: var(--surface);
     margin: var(--padding-xs) 0;
@@ -335,12 +334,12 @@ a:hover,
     margin-left: var(--padding-xs);
 }
 
-.week-title div{
+.week-title div {
     text-align: left;
 }
 
 .week:hover {
-    box-shadow:inset 0px 0px 0px 0.1rem var(--primary);
+    box-shadow: inset 0px 0px 0px 0.1rem var(--primary);
 }
 
 .sub-cat {
