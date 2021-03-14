@@ -46,6 +46,7 @@ html {
 a {
     text-decoration: none;
     color: inherit;
+    transition: all 0.2s;
 }
 
 ul {
@@ -155,6 +156,10 @@ footer div div{
 
 /* Images */
 
+#techs ion-icon {
+    pointer-events: none;
+}
+
 #logo {
     width: 10rem;
 }
@@ -199,10 +204,15 @@ footer div div{
     color:var(--primary);
 }
 
+.arrow,
 .arrow-open {
-    transform: rotate(-90deg);
     color: var(--secondary);
     transition: transform 0.2s linear;
+}
+
+.arrow-open {
+    transform: rotate(-90deg);
+    color: var(--primary);
 }
 
 /* Titles */
@@ -233,8 +243,9 @@ h3.l-title {
     transition: all 0.2s;
 }
 
-.nav-title:hover{
-    box-shadow: 0 0.2rem var(--primary);
+a:hover,
+.nav-title:hover {
+    box-shadow: 0 0.15rem var(--primary);
 }
 
 #header-title {
@@ -298,6 +309,7 @@ h3.l-title {
 }
 
 .week {
+    z-index: 1;
     cursor:pointer;
     border-radius: 0.25rem;
     background-color: var(--surface);
@@ -307,11 +319,16 @@ h3.l-title {
 }
 
 .week-link {
+    z-index: 2;
     text-align: left;
     padding-left: var(--padding-m);
     padding-bottom: var(--padding-s);
     font-weight: 600;
+}
+
+.week a {
     color: var(--secondary);
+    margin-left: var(--padding-xs);
 }
 
 .week-title div{
