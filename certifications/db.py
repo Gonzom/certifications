@@ -31,6 +31,7 @@ class User(BaseModel):
     mail = CharField(unique=True)
     github = CharField(unique=True, null=True)
     url = CharField(unique=True, index=True)
+    issue_date = DateField()
     honors = BooleanField(default=False)
 
     @classmethod

@@ -6,7 +6,6 @@ function setWeekOpenClick() {
             const target = element.getElementsByClassName('week-info')[0];
             target.classList.toggle('sub-cat-closed');
             const arrow = element.getElementsByTagName("ion-icon")[0];
-            console.log(arrow);
             arrow.classList.toggle('arrow-open');
         });
     }
