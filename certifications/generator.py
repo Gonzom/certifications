@@ -2,18 +2,18 @@ from datetime import datetime
 from pathlib import Path
 from typing import Union
 
-from PIL import Image, ImageDraw, ImageFont
 import qrcode
+from PIL import Image, ImageDraw, ImageFont
 
 from certifications.config import (
-    COURSE_AVATAR,
     CERT_FONT,
     CERT_IMAGE,
     CERTS_FOLDER,
+    COURSE_AVATAR,
     DOMAIN,
     STATIC_PATH,
 )
-
+from certifications.db import User
 
 NAME_LINE_WIDTH = 935
 NAME_LINE_START = 265
@@ -25,7 +25,7 @@ NAME_FONT_SIZE = 72
 DATE_FONT_SIZE = 32
 
 
-def get_qr_generator():
+def get_qr_generator() -> qrcode.QRCode:
     return qrcode.QRCode(
         version=1,
         error_correction=qrcode.constants.ERROR_CORRECT_H,
@@ -34,7 +34,9 @@ def get_qr_generator():
     )
 
 
-def load_image(image: Union[str, Path], scale: Union[int, float]):
+def load_image(
+    image: Union[str, Path], scale: Union[int, float]
+) -> Image.Image:
     avatar = Image.open(image)
     width, height = int(avatar.width * scale), int(avatar.height * scale)
     return avatar.resize((width, height))
@@ -85,12 +87,12 @@ def create_certificate(name: str, date: int, user_url: str) -> None:
     img.save(get_users_certificate_path(user_url))
 
 
-def get_certification_path(user: "User") -> Path:
+def get_certification_path(user: User) -> Path:
     certification_path = get_users_certificate_path(user.url)
     if not certification_path.exists():
         create_certificate(user.fullname, user.issue_date, user.url)
     return certification_path.relative_to(STATIC_PATH)
 
 
-def get_certification_url(user: "User") -> str:
+def get_certification_url(user: User) -> str:
     return str(get_certification_path(user)).replace("\\", "/")

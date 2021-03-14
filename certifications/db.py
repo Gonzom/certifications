@@ -1,3 +1,4 @@
+from __future__ import annotations
 import json
 from pathlib import Path
 from typing import List
@@ -18,7 +19,7 @@ from certifications.utils import get_random_id
 database = SqliteDatabase(str(DB_PATH))
 
 
-def get():
+def get() -> SqliteDatabase:
     return database
 
 
@@ -26,7 +27,7 @@ class BaseModel(Model):
     class Meta:
         database = database
 
-    def refresh(self) -> "BaseModel":
+    def refresh(self) -> BaseModel:
         return type(self).get(self._pk_expr())
 
 
