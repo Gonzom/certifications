@@ -3,82 +3,122 @@
     "topics": ["הקדמה", "אריתמטיקה", "טיפוסי נתונים", "קלט ופלט", "משתנים",
       "לוגיקה בוליאנית"],
     "description": "פרק זה מאפשר נחיתה רכה לעולם התכנות ומניח את היסודות לקראת הפרקים הבאים. בפרק החניכים לומדים להשתמש בלוגיקה בוליאנית ובאופרטורים של השוואה, ומתרגלים כתיבת תוכנית בסיסית המקבלת קלט ומחזירה פלט.",
-    "icons": ["logo-python"]
+    "icons": ["logo-python"],
+    "links": [{"text": "מחברות פרק 1", "url": "https://github.com/PythonFreeCourse/downloads/raw/master/week1.zip"}]
   },
   {
     "topics": ["תנאים", "פונקציות", "רשימות", "פעולות על מחרוזות", "תיעוד"], 
     "description": " בפרק זה החניכים נפגשים לראשונה עם היכולת להשפיע על מבנה זרימת התוכנית ועם עקרון החלוקה ליחידות קטנות שלהן אחריות יחידה. בשלב זה החניכים מכירים ומשתמשים לראשונה במבנה נתונים מסוג רשימה. החניכים מקבלים לראשונה תרגיל שמעודד אותם לחקור את התיעוד בעצמם. העידוד למחקר עצמאי הולך וגובר ככל שהקורס מתקדם, ונעשה בחציו השני של הקורס לערך מרכזי בעבודה.",
-    "icons": ["logo-python"]
+    "icons": ["logo-python"],
+    "links": [{"text": "מחברות פרק 2", "url": "https://github.com/PythonFreeCourse/downloads/raw/master/week2.zip"}]
   },
   {
     "topics": ["לולאות while", "חיתוך מחרוזות ורשימות", "קבצים", "פעולות על רשימות", "Mutability וטאפלים"],
     "description": "החניכים לומדים לראשונה לולאות המבוססות על ביטוי בוליאני. במהלך הפרק הם מבצעים לראשונה debugging מורכב ולא טריוויאלי. בפרק זה החניכים מקבלים לראשונה כלים להתמודדות עם בעיות מהעולם האמיתי (קבצים, לולאות). בשלב זה הם גם פוגשים לראשונה מבנה נתונים Immutable־י, ולומדים לראשונה על מאפיין תכנותי מורכב שדורש הבנה של התנהגות השפה מאחורי הקלעים.",
-    "icons": ["logo-python"]
+    "icons": ["logo-python"],
+    "links": [{"text": "מחברות פרק 3", "url": "https://github.com/PythonFreeCourse/downloads/raw/master/week3.zip"}]
   },
   {
     "topics": ["לולאות for", "מילונים ופעולות עליהם", "Unpacking", "פונקציות מובנות בשפה"],
     "description": "בפרק זה החניכים משתמשים לראשונה בתכונת ה־iterable־יות של מבני נתונים באמצעות לולאת ה־for של פייתון. בפרק דנים על מילונים ומבני נתונים מקוננים, תוך כדי ניסיון להקנות אינטואיציה לבחירת מבנה נתונים המתאים לסוג הבעיה. זה גם הפרק שבו הם משתמשים לראשונה בטכניקות שיעשו את הקוד לקריא יותר, תוך כדי שימוש בתחביר \"פייתוני\". בסיום הפרק החניכים קוראים על אוטומט סופי דטרמיניסטי. כתרגיל, עליהם לכתוב תוכנית שמקבלת כקלט מצבים, כללי מעבר וקלטים, ומחזירה את המצב הסופי שאליו הגיעה בסיום ריצת האוטומט עבור כל קלט.",
-    "icons": ["logo-python"]
+    "icons": ["logo-python"],
+    "links": [{"text": "מחברות פרק 4", "url": "https://github.com/PythonFreeCourse/downloads/raw/master/week4.zip"}]
   },
   {
     "topics": ["מודולים", "מוסכמות סגנון", "פרמטרים לפונקציות (לפי מיקום, לפי שם, *args, **kwargs, ערכי ברירת מחדל)", "Generators"],
     "description": "בפרק זה גובר הצורך להשתמש במקורות מידע חיצוניים כדי למצוא כלים מתוך המודולים הסטנדרטיים הקיימים בפייתון. לחניכים מוצג לראשונה באופן מסודר הרעיון של מוסכמות כתיבה ו־PEP8, והם לומדים על טכניקות מתקדמות יותר של קבלת ארגומנטים בפונקציות. בחלק האחרון של הפרק החניכים לומדים על generators ועל מילת המפתח yield.",
-    "icons": ["logo-python"]
+    "icons": ["logo-python"],
+    "links": [{"text": "מחברות פרק 5", "url": "https://github.com/PythonFreeCourse/downloads/raw/master/week5.zip"}]
   },
   {
     "topics": ["קבוצות", "מבוא לתכנות פונקציונלי", "מודולים חיצוניים", "ניהול מודולים"],
     "description": "בפרק זה החניכים לומדים על רעיונות פונקציונליים, כמוmap, filter, lambda ואת משמעות המונח higher order function. הם לומדים גם על סוגי ה־comprehensions השונים הקיימים בפייתון וכיצד להשתמש בהם. בחלק האחרון של הפרק החניכים לומדים על מציאת מודולים צד שלישי באינטרנט, זיהוי מודולים רלוונטיים והתקנה שלהם.",
-    "icons": ["logo-python"]
+    "icons": ["logo-python"],
+    "links": [{"text": "מחברות פרק 6", "url": "https://github.com/PythonFreeCourse/downloads/raw/master/week6.zip"}]
   },
   {
     "topics": ["מחלקות", "מוסכמות תיעוד"],
     "description": "בפרק זה החניכים לומדים על מחלקות ומכירים את קצה הקרחון של תכנות מונחה עצמים. תחילה הם נפגשים עם הרעיון של מחלקות, מופעים, תכונות, פעולות אתחול ופונקציות מיוחדות; ולאחר מכן הם נדרשים להבין גם רעיונות כמו הכלה וכימוס. בין לבין, החניכים מקבלים סקירה מעמיקה של טכניקות ומוסכמות תיעוד קוד, ומתבקשים לתרגל כתיבה של מחלקות מתועדות היטב.",
-    "icons": ["logo-python"]
+    "icons": ["logo-python"],
+    "links": [{"text": "מחברות פרק 7", "url": "https://github.com/PythonFreeCourse/downloads/raw/master/week7.zip"}]
   },
   {
     "topics": ["ירושה", "Design Patterns בסיסיות (ירושה מרובה, מחלקות מופשטות, Mixins)", "חריגות וטיפול בחריגות"],
     "description": "בפרק זה החניכים לומדים להכיר את הגמישות שבשימוש במחלקות.  לאורך הפרק מודגשות הבעיות שעלולות לצוץ בשימוש שגוי במחלקות (תסמונת המחלקה השברירית, עקרון ההחלפה של ליסקוב, הבדלים בין הכלה לירושה). החניכים מתבקשים לשנות קוד של משחק שחמט שעושה שימוש במחלקות אבסטרקטיות וב־Mixins, ובכך מתרגלים כניסה לקוד קיים ומתנסים בשימוש בירושה ובטכניקות מתקדמות שקשורות לירושה. בהמשך הפרק החניכים לומדים על טיפול בחריגות, על זריקת חריגות ועל יצירה שלהן, ונחשפים לדיון על טיפול בשגיאות ולשיטות עבודה נכונות בשגיאות.",
-    "icons": ["logo-python"]
+    "icons": ["logo-python"],
+    "links": [{"text": "מחברות פרק 8", "url": "https://github.com/PythonFreeCourse/downloads/raw/master/week8.zip"}]
   },
   {
     "topics": ["סביבת פיתוח", "ניפוי שגיאות", "פיצול קוד לקבצים", "Type annotations", "Decorators"],
     "description": "בפרק זה החניכים עובדים לראשונה על IDE ולומדים את סביבת העבודה החדשה ואת יתרונותיה – כמו כלים לניפוי שגיאות, שבעזרתם הם מתקנים תוכנית שבה הוכמנו טעויות מכוונות. בהמשך הפרק החניכים לומדים על פיצול הפרויקט לקבצים ומתנסים בכך בעצמם. החניכים מתנסים גם בכתיבת קוד עם type annotations, הוספת type annotations לקוד קיים ובדיקת הקוד באמצעות mypy.  לבסוף, החניכים לומדים על decorators ומחדדים את ההבנה שלהם בנוגע לתכונות הפונקציונליות של פייתון כשפה.",
-    "icons": ["logo-python"]
+    "icons": ["logo-python"],
+    "links": [
+      {"text": "מבוא לניפוי שגיאות", "url": "https://greenteapress.com/thinkpython/thinkpython.pdf"},
+      {"text": "פיצול לקבצים", "url": "https://chrisyeh96.github.io/2017/08/08/definitive-guide-python-imports.html"},
+      {"text": "Type Annotations", "url": "https://realpython.com/python-type-checking/"},
+      {"text": "Decorators", "url": "https://realpython.com/primer-on-python-decorators/"}
+    ]
   },
   {
     "topics": ["עבודה עם נתיבים", "Git", "GitHub"],
     "description": "בפרק זה החניכים מתוודעים לרעיון ניהול הגרסאות. בפרק הם מתנסים בכתיבת מערכת משלהם לניהול גרסאות, שכוללת פקודות, כמו add, branch, commit, status ו־checkout. החניכים מממשים גם merge בסיסי ו־graph, שהוא מעין log גרפי. בהמשך הפרק החניכים לומדים כיצד להעלות את הקוד שכתבו ל־GitHub בעזרת git, וכן כיצד לנווט ב־GitHub ולמצוא פרויקטים שניתן לסמוך עליהם.",
-    "icons": ["logo-python", "git-branch-outline", "logo-github"]
+    "icons": ["logo-python", "git-branch-outline", "logo-github"],
+    "links": [
+      {"text": "תרגילי בניית המערכת לניהול גרסאות", "url": "https://forums.pythonic.guru/t/topic/8206"}
+    ]
   },
   {
     "topics": ["HTML", "CSS", "DevTools"],
     "description": "בפרק זה החניכים לומדים HTML ו־CSS ברמה בסיסית, ובסופו הם מעצבים בעצמם אתר סטטי רספונסיבי ותקני. החומרים כוללים מונחים בסיסיים, היכרות עם HTML בדגש על HTML סמנטי, כתיבת CSS רספונסיבי ועבודה מול MDN.",
-    "icons": ["logo-html5", "logo-css3"]
+    "icons": ["logo-html5", "logo-css3"],
+    "links": [
+      {"text": "HTML ב־MDN", "url": "https://developer.mozilla.org/en-US/docs/Learn/HTML"},
+      {"text": "CSS ב־MDN", "url": "https://developer.mozilla.org/en-US/docs/Learn/CSS"}
+    ]
   },
   {
     "topics": ["אינטרנט", "סביבה וירטואלית", "Wireframing", "Serialization",
       "APIs", "Templating Engine", "Web Frameworks", "Heroku"],
     "description": "בפרק זה לומדים כיצד לבנות אתר – מרמת ה־wireframing ועד העלאת האתר לאינטרנט. במסגרת הפרויקט החניכים כותבים קוד פייתון שעושה שימוש ב־API חיצוני, כדי להשיג מידע שיוצג באתר שלהם. החניכים לומדים לראשונה על Flask כ־microframework ל־web applications, ובונים את התצוגה למשתמש בעזרת מנוע התבניות Jinja2. הפרק מסתיים בתהליך deploy של האתר ל־Heroku (שירות PaaS) כדי להפוך אותו לפומבי.",
-    "icons": ["logo-python", "logo-html5", "logo-css3", "git-branch-outline", "logo-github"]
+    "icons": ["logo-python", "logo-html5", "logo-css3", "git-branch-outline", "logo-github"],
+    "links": [
+      {"text": "Flask Docs", "url": "https://flask.palletsprojects.com/en/1.1.x/"},
+      {"text": "Jinja2 Docs", "url": "https://jinja.palletsprojects.com/en/2.11.x/"},
+      {"text": "Deployment to Heroku", "url": "https://devcenter.heroku.com/articles/github-integration"}
+    ]
   },
   {
     "topics": ["מבוא למסדי נתונים רלציוניים", "SQL"],
     "description": "בפרק זה החניכים לומדים על היתרונות של שימוש במסדי נתונים.  במסגרת התרגול, הם שולפים מידע ממסדי נתונים ומשתמשים בשאילתות עם מילות המפתחSELECT, FROM, WHERE, JOIN, GROUP BY, HAVING, ORDER BY ו־LIMIT. הפרק מסתיים בדיון ותרגול של נרמול נתונים במסדי נתונים רלציוניים.",
-    "icons": ["server-outline"]
+    "icons": ["server-outline"],
+    "links": [{"text": "מחברות SQL", "url": "https://github.com/PythonFreeCourse/downloads/blob/master/week13.zip"}]
   },
   {
     "topics": ["פעולות CRUD", "שימוש ב־ORM", "פרויקט"],
     "description": "בפרק זה החניכים כותבים פרויקט שממחיש את הקשר בין מסדי נתונים רלציוניים ליישומי אינטרנט. החניכים מתכננים ERD שבו שלוש טבלאות או יותר, כותבים שאילתות ליצירה, קריאה, עדכון ומחיקה של הישויות בטבלאות ומשתמשים ב־ORM לבחירתם (peewee או SQLAlchemy) כשכבת הפשטה לשאילתות ולגישור בין מסד הנתונים לאובייקטים בקוד.",
-    "icons": ["logo-python", "logo-html5", "logo-css3", "server-outline", "git-branch-outline", "logo-github"]
+    "icons": ["logo-python", "logo-html5", "logo-css3", "server-outline", "git-branch-outline", "logo-github"],
+    "links": [
+      {"text": "CRUD", "url": "https://en.wikipedia.org/wiki/Create,_read,_update_and_delete"},
+      {"text": "SQLBolt", "url": "https://sqlbolt.com/lesson/inserting_rows"},
+      {"text": "SQLAlchemy Docs", "url": "https://docs.sqlalchemy.org/en/latest/orm/"}
+    ]
   },
   {
     "topics": ["Regular Expressions", "מבוא ליעילות אלגוריתמית", "pytest"],
     "description": "בפרק זה החניכים מעמיקים בביטויים רגולריים ולומדים להשתמש בהם, הן בפייתון והן לשימושים כלליים אחרים. החניכים לומדים להשתמש ב־pytest וכותבים בדיקות עבור “משחק החיים” (שכתבו בעצמם) ועבור הפרויקט שכתבו בפרק הקודם. בסיום הפרק החניכים לומדים מונחים בסיסיים ביעילות אלגוריתמית, רוכשים אינטואיציה ומחשבים זמני ריצה של תוכניות שונות.",
-    "icons": ["logo-python"]
+    "icons": ["logo-python"],
+    "links": [
+      {"text": "Regular Expression", "url": "https://regexone.com/lesson/introduction_abcs"},
+      {"text": "RE Python Docs", "url": "https://docs.python.org/3/howto/regex.html"},
+      {"text": "מבוא לבדיקות", "url": "https://automationpanda.com/testing/"},
+      {"text": "מבוא ליעילות", "url": "https://discrete.gr/complexity/?he"},
+      {"text": "CS50 על יעילות", "url": "https://youtu.be/tk3wiMbQmow?t=958"}
+    ]
   },
   {
     "topics": ["פרויקט סיום"],
     "description": "בפרק זה החניכים עובדים יחד על פרויקט, שבו כל חניך לוקח על עצמו עבודה על שלושה issues – לפחות פיצ’ר אחד ועד שני תיקוני באגים. במהלך העבודה החניכים לומדים על עבודה בצוות, שימוש ב־Git, פתרון קונפליקטים, קבלת CR־ים מעמיתים והשתלבות בקוד של אחרים.",
-    "icons": ["logo-python", "logo-html5", "logo-css3", "logo-javascript", "server-outline", "git-branch-outline", "logo-github"]
+    "icons": ["logo-python", "logo-html5", "logo-css3", "logo-javascript", "server-outline", "git-branch-outline", "logo-github"],
+    "links": [{"text": "פרויקט הסיום", "url": "https://github.com/PythonFreeCourse/calendar"}]
   }
 ]
